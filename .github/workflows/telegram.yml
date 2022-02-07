@@ -22,7 +22,6 @@ jobs:
         run: node index.js
 
         env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
           SIMPREAD_TOKEN: ${{ secrets.SIMPREAD_TOKEN }}
           SIMPREAD_ID: ${{ secrets.SIMPREAD_ID }}
+          TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
