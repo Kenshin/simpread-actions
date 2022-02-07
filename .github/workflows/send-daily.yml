@@ -1,10 +1,10 @@
-name: 'GitHub Actions Telegram Bot'
+name: 'GitHub Actions Send Daily to Telegram / Feishu'
 
 on:
   push:
     branches: [main]
   schedule:
-    - cron: '30 11 * * *'
+    - cron: '36 11 * * *'
 
 jobs:
   bot:
