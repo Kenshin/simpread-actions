@@ -53,7 +53,7 @@ function sendTelegram( urls ) {
 
 来自 [简悦](http://simpread.pro/)`,
     config = {
-            url      : 'https://simpread-api-kenshin.vercel.app/api/service/telegram',
+            url      : 'https://api-wrap.simpread.pro/api/service/telegram',
             method   : 'post',
             data     : {
                 chat : process.env.TELEGRAM_CHAT,
