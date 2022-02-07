@@ -67,7 +67,7 @@ function sendTelegram( urls ) {
             method   : 'post',
             data     : {
                 chat : process.env.TELEGRAM_CHAT,
-                text : encodeURIComponent( text.replace( '{{urls}}', urls.join( '\n' )) )
+                text : text.replace( '{{urls}}', urls.join( '\n' ))
             }
     };
     axios( config ).then( response => {
