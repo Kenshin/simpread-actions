@@ -31,10 +31,12 @@ function getDaily() {
             response.data.forEach( item => {
                 urls.push( `[${ item.title }](${ item.url })` );
             });
-            //urls.length > 0 && sendTelegram( urls );
-            urls.length > 0 && sendFeishu( urls );
-        } else {
-
+            if ( process.env.SEND_TYPE == 'telegram' ) sendTelegram( urls );
+            else if ( process.env.SEND_TYPE == 'feishu' ) sendFeishu( urls );
+            else {
+                sendTelegram( urls );
+                sendFeishu( urls );
+            }
         }
     }).catch( error => {
         console.error( error );

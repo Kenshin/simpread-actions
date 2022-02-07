@@ -22,6 +22,7 @@ jobs:
         run: node index.js
 
         env:
+          SEND_TYPE: ${{ secrets.SEND_TYPE }}
           SIMPREAD_TOKEN: ${{ secrets.SIMPREAD_TOKEN }}
           SIMPREAD_ID: ${{ secrets.SIMPREAD_ID }}
           TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
