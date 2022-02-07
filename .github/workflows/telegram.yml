@@ -25,3 +25,4 @@ jobs:
           SIMPREAD_TOKEN: ${{ secrets.SIMPREAD_TOKEN }}
           SIMPREAD_ID: ${{ secrets.SIMPREAD_ID }}
           TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
+          FEISHU_TOKEN: ${{ secrets.FEISHU_TOKEN }}

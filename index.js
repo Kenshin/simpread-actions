@@ -31,7 +31,8 @@ function getDaily() {
             response.data.forEach( item => {
                 urls.push( `[${ item.title }](${ item.url })` );
             });
-            urls.length > 0 && sendTelegram( urls );
+            //urls.length > 0 && sendTelegram( urls );
+            urls.length > 0 && sendFeishu( urls );
         } else {
 
         }
@@ -65,6 +66,43 @@ function sendTelegram( urls ) {
     }).catch( error => {
         res.json({ status: -1, error });
     });
+}
+
+/**
+ * 
+ * @param {*} urls 
+ */
+function sendFeishu( urls ) {
+    const body = {
+        "msg_type": "interactive",
+        "card": {
+            "config": {
+                "wide_screen_mode": true
+            },
+            "elements": [
+            {
+                "tag": "div",
+                "text": {
+                    "content": urls.join( '\n' ),
+                    "tag": "lark_md"
+                }
+            }],
+            "header": {
+                "template": "blue",
+                "title": {
+                    "content": "简悦 · 每日回顾 " + now(),
+                    "tag": "plain_text"
+                }
+            }
+        }
+    };
+    axios.post( process.env.FEISHU_TOKEN, body )
+    .then( response => {
+        console.log( 'sendFeishu success ', response )
+    })
+    .catch( error => {
+        console.log( 'sendFeishu error ', error )
+    })
 }
 
 getDaily();
