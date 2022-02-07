@@ -62,13 +62,14 @@ function sendTelegram( urls ) {
             }
     };
     axios( config ).then( response => {
-        res.json({ status: 201, response });
+        console.log( 'sendTelegram success ', response )
     }).catch( error => {
-        res.json({ status: -1, error });
+        console.log( 'sendTelegram error ', error )
     });
 }
 
 /**
+ * Send Feishu
  * 
  * @param {*} urls 
  */
