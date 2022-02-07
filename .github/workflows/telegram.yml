@@ -3,18 +3,24 @@ name: 'GitHub Actions Telegram Bot'
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '10 19 * * *'
 
 jobs:
   bot:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+
       - name: 'Install node'
         uses: actions/setup-node@v1
+
       - name: 'Install NPM dependencies'
         run: npm install
+
       - name: 'Run node'
         run: node index.js
+
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
