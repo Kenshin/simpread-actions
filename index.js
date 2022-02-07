@@ -7,10 +7,13 @@ const axios = require( 'axios' );
  */
 function now() {
     const date   = new Date(),
-          format = value => value = value < 10 ? "0" + value : value;
-    return date.getFullYear() + "/" + format( date.getUTCMonth() + 1 ) + "/" + format( date.getUTCDate() ) + " " + format( date.getHours() ) + ":" + format( date.getMinutes() ) + ":" + format( date.getSeconds() );
+          format = value => value = value < 10 ? '0' + value : value;
+    return date.getFullYear() + '/' + format( date.getUTCMonth() + 1 ) + '/' + format( date.getUTCDate() );
 }
 
+/**
+ * Get Simpread Unreader Daily
+ */
 function getDaily() {
     const settings = {
         method: 'POST',
@@ -37,6 +40,11 @@ function getDaily() {
     });
 }
 
+/**
+ * Send Telegram
+ * 
+ * @param {array} urls 
+ */
 function sendTelegram( urls ) {
     const text        = `
 ▎ 简悦 · 每日回顾 ${ now() }
