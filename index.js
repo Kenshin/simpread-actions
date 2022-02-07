@@ -52,6 +52,7 @@ function sendTelegram( urls ) {
 {{urls}}
 
 来自 [简悦](http://simpread.pro/)`,
+    /*
           sendMessage = `https://api.telegram.org/bot${ process.env.TELEGRAM_TOKEN }/sendMessage?chat_id=${ process.env.TELEGRAM_CHAT }&parse_mode=Markdown&text=` + encodeURIComponent( text.replace( '{{urls}}', urls.join( '\n' )) );
     axios.get( sendMessage )
     .then( response => {
@@ -60,6 +61,20 @@ function sendTelegram( urls ) {
     .catch( error => {
         res.json({ status: 201, error });
     })
+    */
+    config = {
+            url      : 'https://simpread-api-kenshin.vercel.app/api/service/telegram',
+            method   : 'post',
+            data     : {
+                chat : process.env.TELEGRAM_CHAT,
+                text : encodeURIComponent( text.replace( '{{urls}}', urls.join( '\n' )) )
+            }
+    };
+    axios( config ).then( response => {
+        res.json({ status: 201, response });
+    }).catch( error => {
+        res.json({ status: -1, error });
+    });
 }
 
 getDaily();
