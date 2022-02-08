@@ -47,7 +47,7 @@
 
 ## 配置
 
-- [简悦的知识库](https://github.com/Kenshin/simpread/discussions/3383)
+- [Github Discussions](https://github.com/Kenshin/simpread/discussions/3383)
 - [简悦的知乎专栏](https://zhuanlan.zhihu.com/p/464881364)
 
 ## 视频效果
