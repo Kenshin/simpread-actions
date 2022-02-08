@@ -22,48 +22,47 @@
 
 > 每晚 19点10分，通过 Github Actions 与简悦 API，将每日回顾推送到你的 Telegram 或飞书群。
 
-# 效果
+## 效果
 
-- 发送到 Telegram
+> 发送到 Telegram
 
-  ![image-20220208120301218](https://cdn.jsdelivr.net/gh/23784148/upload-images@main/typora/20220208_1644292981.png)
+![image-20220208120301218](https://cdn.jsdelivr.net/gh/23784148/upload-images@main/typora/20220208_1644292981.png)
 
-- 发送到飞书群
+> 发送到飞书群
 
-  ![image-20220208115548111](https://cdn.jsdelivr.net/gh/23784148/upload-images@main/typora/20220208_1644292548.png)
+![image-20220208115548111](https://cdn.jsdelivr.net/gh/23784148/upload-images@main/typora/20220208_1644292548.png)
 
-# Github Actions
+## Github Actions
 
 一个持续集成的自动化方案，具有很多玩法，春节期间抽时间用了用，所以诞生了这个项目，这个项目的特点是：
 
 - 不需要编写任何代码
 - 不需要任何额外服务支持
 
-# 前置知识
+## 前置知识
 
 - 需要配置 [知识库](https://www.yuque.com/kenshin/simpread/lglfy2)、 [资料库](https://www.yuque.com/kenshin/simpread/vcmg4o) 与 [开放平台](https://www.yuque.com/kenshin/simpread/ieu1w6)
 - 需要使用 [简悦 · 同步助手 小二](https://t.me/simpread_bot) 或 [飞书群 以及 飞书 bot](https://github.com/Kenshin/simpread/discussions/3104)
 - 需要注册 Github 账户
 
-# 配置
+## 配置
 
 - [简悦的知识库](https://github.com/Kenshin/simpread/discussions/3383)
 - [简悦的知乎专栏](https://zhuanlan.zhihu.com/p/464881364)
 
-# 视频效果
+## 视频效果
 
 完成上述操作后的视频效果请看 [知乎视频](https://www.zhihu.com/zvideo/1474366077962051585)。
 
-# 注意事项
+## 注意事项
 
 - 上述教程以 Telegram 为例，如果使用飞书群与此方式类似，但无需 `TELEGRAM_CHAT`，但需要获得 `FEISHU_TOKEN` 。
 
 -  `send-daily.yml` 的触发条件有两个：
-  - 每天晚上 **19点10分** （你可以根据上图修改为任意时间）
-  - 每次 Push 代码到 main 分支（也就是当你修改代码并 push 后自动执行）
+    * 每天晚上 **19点10分** （你可以根据上图修改为任意时间）
+    * 每次 Push 代码到 main 分支（也就是当你修改代码并 push 后自动执行）
 
 - 每次发送的每日回顾内容可以通过**简悦扩展端 → 稍后读 → 24小时**查看。（如果你配置完没有收到的话，看看这里是否存在稍后读，如果没有的话，则不会发送。
-
 
 # 关联
 
