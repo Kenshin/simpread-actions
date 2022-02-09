@@ -60,6 +60,7 @@ function sendTelegram( urls ) {
             method   : 'post',
             data     : {
                 chat : process.env.TELEGRAM_CHAT,
+                token: process.env.TELEGRAM_TOKEN,
                 text : text.replace( '{{urls}}', urls.join( '\n' ))
             }
     };
